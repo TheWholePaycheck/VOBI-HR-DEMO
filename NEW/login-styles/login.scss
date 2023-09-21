@@ -1,0 +1,132 @@
+// create css variables
+:root {
+    --blue: #0e54b0;
+    --lighter-blue: #4d77af;
+    --white: #ffffff;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+    width: 100vw;
+    height: 100vh
+}
+
+
+main {
+    display: flex; // layout the image and the form horizontally
+    
+    width: 100%;
+    height: 100%;
+
+    // allow the divs to share the screen equally
+    .image-section, .form-section {
+        flex: 1;
+    }
+    
+    // add a background image to the div
+    .image-section {
+        background-image: url(../assets/images/1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        image-rendering: crisp-edges; // enhance image
+    }
+
+
+    .image-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 100px;
+        position: relative;
+
+        .overlay {
+            background-color: var(--blue);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            mix-blend-mode: hard-light;
+            z-index: 0;
+        }
+
+        .text-overlay-container {
+            color: var(--white);
+            position: absolute;
+
+            .text-overlay {
+                font-size: 42pt;
+            }
+
+            .subtext-ovelay {
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .form-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+ 
+        padding: 0px 100px;
+
+        .title {
+            color: var(--blue);
+            font-size: 32pt;
+            margin-bottom: 20px;
+        }
+
+        .email-input, .password-input {
+            color: var(--blue);
+            padding: 20px;
+            border: solid 2px var(--blue);
+            font-weight: bold;
+            outline-color: var(--blue);
+        }
+        
+        .email-input {
+            margin-bottom: 10px;
+        }
+
+        // style the placeholder text
+        .email-input::placeholder, .password-input::placeholder{
+            color: var(--lighter-blue);
+            text-transform: uppercase;
+        }
+
+        // style the login button
+        .login-btn {
+            padding: 20px;
+            background-color: var(--blue);
+            color: var(--white);
+            font-weight: bold;
+            border: none;
+            font-size: larger;
+            text-transform: uppercase;
+            margin-top: 50px;
+            cursor: pointer;
+        }
+
+        .forgot-password {
+            text-transform: uppercase;
+            text-align: center;
+            padding-top: 10px;
+
+            a {
+                color: var(--blue);
+            }
+        }
+    }
+
+}
+
+
